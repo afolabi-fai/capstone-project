@@ -20,5 +20,14 @@ bookTickets(quantity, attendeeName) {
         this.waitlist.push(attendeeName);
         return`Event is sold out! ${attendeeName} has been added to the waitlist.`; 
     }
-   } 
-  }
+   }
+}
+
+export function searchEvents(events, city, maxPrice) {
+    const wantedCity = city.trim().toLowerCase();
+
+    return events.filter((event) => {
+        const eventCity = event.city.trim().toLowerCase();
+        return eventCity === wantedCity && event.price <= maxPrice;
+    });
+}
