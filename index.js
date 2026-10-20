@@ -1,4 +1,4 @@
-import { Event, searchEvents } from './event.js';
+import { Event, searchEvents, sortEventsByPrice } from './event.js';
 
 // Create an event with a maximum capacity of 3 seats
 const myConcert = new Event("Tech Summit 2026", 3);
@@ -25,3 +25,7 @@ const events = [
 const matchingEvents = searchEvents(events, "Lagos", 10);
 console.log(matchingEvents);
 // The Music Festival matches; the original events list remains unchanged.
+
+const eventsByPrice = sortEventsByPrice(events);
+console.log(eventsByPrice);
+// Events are ordered from the lowest ticket price to the highest.

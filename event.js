@@ -31,3 +31,7 @@ export function searchEvents(events, city, maxPrice) {
         return eventCity === wantedCity && event.price <= maxPrice;
     });
 }
+
+export function sortEventsByPrice(events) {
+    return [...events].sort((eventA, eventB) => eventA.price - eventB.price);
+}
